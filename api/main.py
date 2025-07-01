@@ -10,11 +10,8 @@ CORS(app)
 class WatchImageMatcher:
     def __init__(self, images_folder="watch_images"):
         self.images_folder = Path(images_folder)
-        # Ensure the images folder exists
-        if not self.images_folder.exists():
-            self.images_folder.mkdir(exist_ok=True)
-            
-       self.watch_models = {
+
+    self.watch_models = {
     # Classic Collection
     "Linea": ["linea"],
     "Serene": ["serene"],
@@ -24,13 +21,13 @@ class WatchImageMatcher:
     # Contemporary Collection
     "Ophelia": ["ophelia"],
     "Eterna": ["eterna"],
-    "Lunaire Noir": ["lunaire noir", "lunaire black"],
-    "Lunaire Rosé": ["lunaire rosé", "lunaire rose", "lunaire pink"],
+    "Lunaire Noir": ["lunaire noir", "lunaire-noir", "Lunaire-noir", "Lunaire-Noir"],
+    "Lunaire Rosé": ["lunaire rosé", "lunaire rose", "lunaire-rose",  "Lunaire-rose", "Lunaire-Rose"],
 
     # Sport Collection
     "Explorer": ["explorer"],
-    "Dive Master": ["dive master"],
-    "Field Ranger": ["field ranger"],
+    "Dive Master": ["dive master", "dive-master", "Dive-Master"],
+    "Field Ranger": ["field ranger", "field-ranger", "Field-Ranger"],
     "Nightfall": ["nightfall"],
 
     # Special / Extravagant Collection
