@@ -15,29 +15,36 @@ class WatchImageMatcher:
             self.images_folder.mkdir(exist_ok=True)
             
         self.watch_models = {
-            "Tradition Auto 40": ["tradition auto 40", "tradition auto fourty", "tradition auto forty"],
-            "Regent 38": ["regent 38", "regent thirty-eight", "regent thirty eight"],
-            "Classic 34": ["classic 34", "classic thirty-four", "classic thirty four"],
-            "Halo 37": ["halo 37", "halo thirty-seven", "halo thirty seven"],
-            "Explorer 42": ["explorer 42", "explorer fourty-two", "explorer forty-two", "explorer forty two"],
-            "Dive Master 44": ["dive master 44", "dive master fourty-four", "dive master forty-four", "dive master forty four"],
-            "Chrono Speed 40": ["chrono speed 40", "chrono speed fourty", "chrono speed forty"],
-            "Field Ranger 41": ["field ranger 41", "field ranger fourty-one", "field ranger forty-one", "field ranger forty one"],
-            "Urban 38": ["urban 38", "urban thirty-eight", "urban thirty eight"],
-            "Minimalist 35": ["minimalist 35", "minimalist thirty-five", "minimalist thirty five"],
-            "Canvas 39": ["canvas 39", "canvas thirty-nine", "canvas thirty nine"],
-            "Bloom 34": ["bloom 34", "bloom thirty-four", "bloom thirty four"],
-            "Nightfall 41": ["nightfall 41", "nightfall fourty-one", "nightfall forty-one", "nightfall forty one"],
-            "Tempo Luxe 40": ["tempo luxe 40", "tempo luxe fourty", "tempo luxe forty"],
-            "Neon Pulse 42": ["neon pulse 42", "neon pulse fourty-two", "neon pulse forty-two", "neon pulse forty two"],
-            "Nova Crystal 36": ["nova crystal 36", "nova crystal thirty-six", "nova crystal thirty six"]
-        }
-        
-        self.variation_to_model = {}
-        for model, variations in self.watch_models.items():
-            for variation in variations:
-                self.variation_to_model[variation.lower()] = model
+        # Classic Collection
+        "Linea": ["linea"],
+        "Serene": ["serene"],
+        "Winchester": ["winchester"],
+        "Sheffield": ["sheffield"],
     
+        # Contemporary Collection
+        "Ophelia": ["ophelia"],
+        "Eterna": ["eterna"],
+        "Lunaire Noir": ["lunaire noir", "lunaire-noir", "Lunaire-noir", "Lunaire-Noir"],
+        "Lunaire Rosé": ["lunaire rosé", "lunaire rose", "lunaire-rose",  "Lunaire-rose", "Lunaire-Rose"],
+    
+        # Sport Collection
+        "Explorer": ["explorer"],
+        "Dive Master": ["dive master", "dive-master", "Dive-Master"],
+        "Field Ranger": ["field ranger", "field-ranger", "Field-Ranger"],
+        "Nightfall": ["nightfall"],
+    
+        # Special / Extravagant Collection
+        "Luna": ["luna"],
+        "Commander": ["commander"],
+        "Volt": ["volt"],
+        "Dynastia": ["dynastia"]
+            }
+            
+            self.variation_to_model = {}
+            for model, variations in self.watch_models.items():
+                for variation in variations:
+                    self.variation_to_model[variation.lower()] = model
+        
     def find_watch_model(self, text):
         text_lower = text.lower()
         
